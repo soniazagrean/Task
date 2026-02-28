@@ -150,9 +150,28 @@ This project models an order management system for SieMarket, an online electron
 ### Solution Structure
 The solution is split into three classes, each one having a single responsability:
 
-- **`OrderItem`** — represents a single product line in an order, holding the product name, quantity, unit price, and a computed subtotal
-- **`Order`** — represents a customer's order, containing a list of `OrderItem` objects and the logic to calculate the final price with the discount rule applied
-- **`OrderService`** — acts as the business logic layer, operating over a collection of orders to provide analytics such as the top spending customer and product sales totals
+- **[`OrderItem`](https://github.com/soniazagrean/Task-siemens/blob/main/SieMarket/SieMarket/OrderItem.cs)** — represents a single product line in an order, holding the product name, quantity, unit price, and a computed subtotal
+- **[`Order`](https://github.com/soniazagrean/Task-siemens/blob/main/SieMarket/SieMarket/Order.cs)** — represents a customer's order, containing a list of `OrderItem` objects and the logic to calculate the final price with the discount rule applied
+- **[`OrderService`](https://github.com/soniazagrean/Task-siemens/blob/main/SieMarket/SieMarket/OrderService.cs)** — acts as the business logic layer, operating over a collection of orders to provide analytics such as the top spending customer and product sales totals
+
+### Why `decimal` Instead of `double` for Prices
+
+In a previous solution I used `double` instead of `decimal`. Why did I decide to switch to decimal? That is because of how numbers are handled internally.
+
+`double` uses binary floating point arithmetic, which cannot represent some decimal fractions exactly. For example:
+```csharp
+double a = 0.1 + 0.2;
+Console.WriteLine(a); // 0.30000000000000004
+```
+
+This kind of rounding error is acceptable for scientific calculations but unacceptable for money — even a fraction of a cent discrepancy can cause incorrect totals, failed assertions, or financial inconsistencies at scale.
+
+`decimal` uses base-10 arithmetic and is designed specifically for financial calculations, making it the correct choice whenever precision with monetary values matters.
+```csharp
+decimal a = 0.1m + 0.2m;
+Console.WriteLine(a); // 0.3
+```
+
 
 ### Setup & Running
 1. Make sure you have the [.NET SDK](https://dotnet.microsoft.com/download) installed.

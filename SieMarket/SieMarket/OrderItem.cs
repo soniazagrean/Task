@@ -2,7 +2,7 @@ namespace SieMarket;
 
 public class OrderItem
 {
-    public OrderItem(string productName, int quantity, double unitPrice)
+    public OrderItem(string productName, int quantity, decimal unitPrice)
     {
         ProductName = productName;
         Quantity = quantity;
@@ -11,8 +11,8 @@ public class OrderItem
 
     public string ProductName { get; set; }
     public int Quantity { get; set; }
-    public double UnitPrice { get; set; }
+    public decimal UnitPrice { get; set; }
     
 
-    public double Subtotal => Quantity * UnitPrice;
+    public decimal Subtotal => Quantity * UnitPrice;
 }

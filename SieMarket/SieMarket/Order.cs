@@ -15,14 +15,14 @@ public class Order
     public string CustomerName { get; set; }
     public List<OrderItem> Items { get; set; }
 
-    private const double DiscountThreshold = 500;
-    private const double DiscountRate = 0.10;
+    private const decimal DiscountThreshold = 500m;
+    private const decimal DiscountRate = 0.10m;
 
     // requirement 2.2: calculates the total and applies the 10% discount 
     // only if the subtotal exceeds the 500€ threshold
-    public double CalculateFinalPrice()
+    public decimal CalculateFinalPrice()
     {
-        double total = Items.Sum(item => item.Subtotal);
+        decimal total = Items.Sum(item => item.Subtotal);
         if (total > DiscountThreshold)
             total *= (1 - DiscountRate); // applying 10% discount
         return total;
