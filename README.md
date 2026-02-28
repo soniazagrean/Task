@@ -69,7 +69,6 @@ classDiagram
     OrderItem "*" --> "*" Extra
     OrderItem "1" --> "1" BeveragePrice
     Beverage "1" -- "*" BeveragePrice
-    OrderItem "1" --> "*" Extra
 ```
 
 ### 1.2 Database diagram
@@ -78,13 +77,12 @@ The relational schema is designed for 3rd Normal Form (3NF) normalization. It su
 
 ``` mermaid
 erDiagram
-    CUSTOMER ||--o{ ORDER : ""
-    BARISTA ||--o{ ORDER : ""
-    ORDER ||--|{ ORDER_ITEM : ""
-    BEVERAGE ||--|{ BEVERAGE_CONFIG : ""
-    ORDER_ITEM ||--o{ ORDER_ITEM_EXTRA : ""
-    EXTRA ||--o{ ORDER_ITEM_EXTRA : ""
-    ORDER_ITEM }|--|| BEVERAGE_CONFIG : ""
+    CUSTOMER ||--|{ ORDER : "1:m"
+    BARISTA ||--|{ ORDER : "1:m"
+    ORDER ||--|{ ORDER_ITEM : "1:m"
+    BEVERAGE ||--|{ BEVERAGE_CONFIG : "1:m"
+    ORDER_ITEM }|--|{ EXTRA : "m:n"
+    ORDER_ITEM }|--|| BEVERAGE_CONFIG : "m:1"
 
     CUSTOMER {
         int CustomerID PK
