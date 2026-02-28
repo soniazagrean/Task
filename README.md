@@ -19,8 +19,15 @@ classDiagram
         -String name
         -String memberType
         -int points
-        +earnPoints(double amount)
         +redeemPoints(int points)
+        +getPoints() int
+        +earnPoints(double amount)*
+    }
+    class RegularCustomer {
+        +earnPoints(double amount)
+    }
+    class GoldCustomer {
+        +earnPoints(double amount)
     }
     class Barista {
         -int id
@@ -31,13 +38,13 @@ classDiagram
         -int id
         -Date timestamp
         -double totalPrice
+        -int pointsEarned
         +calculateTotal()
         +addItem(OrderItem item)
     }
     class OrderItem {
         -int id
         -int quantity
-        -List~Extra~ extras
         +calculateItemPrice()
     }
     class Beverage {
@@ -54,9 +61,12 @@ classDiagram
         -double price
     }
 
+    Customer <|-- RegularCustomer
+    Customer <|-- GoldCustomer
     Customer "1" -- "*" Order
     Barista "1" -- "*" Order
     Order "1" *-- "*" OrderItem
+    OrderItem "*" --> "*" Extra
     OrderItem "1" --> "1" BeveragePrice
     Beverage "1" -- "*" BeveragePrice
     OrderItem "1" --> "*" Extra
@@ -68,21 +78,13 @@ The relational schema is designed for 3rd Normal Form (3NF) normalization. It su
 
 ``` mermaid
 erDiagram
-    CUSTOMER ||--o{ ORDER : "(1:m)"
-
-    BARISTA ||--o{ ORDER : "(1:m)"
-    
-    ORDER ||--|{ ORDER_ITEM : "(1:m)"
-
-    BEVERAGE ||--|{ BEVERAGE_CONFIG : " (1:m)"
-    
-    ORDER_ITEM ||--o{ ORDER_ITEM_EXTRA : "(1:m)"
-
-    EXTRA ||--o{ ORDER_ITEM_EXTRA : "(1:m)"
-    
-    ORDER_ITEM }|--|| BEVERAGE_CONFIG : "(m:1)"
-
-    
+    CUSTOMER ||--o{ ORDER : ""
+    BARISTA ||--o{ ORDER : ""
+    ORDER ||--|{ ORDER_ITEM : ""
+    BEVERAGE ||--|{ BEVERAGE_CONFIG : ""
+    ORDER_ITEM ||--o{ ORDER_ITEM_EXTRA : ""
+    EXTRA ||--o{ ORDER_ITEM_EXTRA : ""
+    ORDER_ITEM }|--|| BEVERAGE_CONFIG : ""
 
     CUSTOMER {
         int CustomerID PK
@@ -90,13 +92,24 @@ erDiagram
         string MemberType
         int Points
     }
-    
+
+    BARISTA {
+        int BaristaID PK
+        string Name
+    }
+
     ORDER {
         int OrderID PK
         int CustomerID FK
         int BaristaID FK
         datetime OrderTimestamp
         decimal TotalPrice
+        int PointsEarned
+    }
+
+    BEVERAGE {
+        int BeverageID PK
+        string Name
     }
     
     BEVERAGE_CONFIG {
@@ -104,11 +117,6 @@ erDiagram
         int BeverageID FK
         string Size
         decimal Price
-    }
-    
-    BEVERAGE {
-        int BeverageID PK
-        string Name
     }
 
     ORDER_ITEM {
