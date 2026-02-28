@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieMarket", "SieMarket\SieMarket.csproj", "{CBFCCC5E-99A5-445E-A6AF-77605D81A223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SieMarket.Tests", "SieMarket.Tests\SieMarket.Tests.csproj", "{A6A43D7A-D0D0-43F8-A66B-9088F282CF65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBFCCC5E-99A5-445E-A6AF-77605D81A223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFCCC5E-99A5-445E-A6AF-77605D81A223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFCCC5E-99A5-445E-A6AF-77605D81A223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFCCC5E-99A5-445E-A6AF-77605D81A223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A43D7A-D0D0-43F8-A66B-9088F282CF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A43D7A-D0D0-43F8-A66B-9088F282CF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A43D7A-D0D0-43F8-A66B-9088F282CF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A43D7A-D0D0-43F8-A66B-9088F282CF65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

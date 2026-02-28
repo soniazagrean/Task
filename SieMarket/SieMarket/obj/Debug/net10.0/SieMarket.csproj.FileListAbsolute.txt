@@ -1,0 +1,15 @@
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/bin/Debug/net10.0/SieMarket
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/bin/Debug/net10.0/SieMarket.deps.json
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/bin/Debug/net10.0/SieMarket.runtimeconfig.json
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/bin/Debug/net10.0/SieMarket.dll
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/bin/Debug/net10.0/SieMarket.pdb
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.AssemblyInfoInputs.cache
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.AssemblyInfo.cs
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.csproj.CoreCompileInputs.cache
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.sourcelink.json
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.dll
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/refint/SieMarket.dll
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.pdb
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/SieMarket.genruntimeconfig.cache
+/Users/zagreansonia/Desktop/Task-siemens/SieMarket/SieMarket/obj/Debug/net10.0/ref/SieMarket.dll
